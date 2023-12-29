@@ -70,7 +70,9 @@ jobs:
       - name: Configure Project
         run: |
           qmake -v
-          # TODO: libfcitx5
+          cp /usr/lib/x86_64-linux-gnu/qt6/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so ./
+          sudo chmod +rwx ./libfcitxplatforminputcontextplugin.so
+          cp ./libfcitxplatforminputcontextplugin.so $Qt6_DIR/plugins/platforminputcontexts
           qmake CONFIG+=release -spec linux-g++-64 ${GITHUB_WORKSPACE}/vnote.pro
         working-directory: ${{runner.workspace}}/build
 
