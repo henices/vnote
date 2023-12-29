@@ -100,10 +100,10 @@ jobs:
           # EXTRA_QT_PLUGINS="platformthemes/libqt5ct.so;styles/libqt5ct-style.so"
           mkdir -p AppDir/usr/plugins/platformthemes
           mkdir -p AppDir/usr/plugins/styles
-          cp $Qt6_Dir/plugins/platformthemes/* AppDir/usr/plugins/platformthemes/
-          cp $Qt6_Dir/plugins/styles/* AppDir/usr/plugins/styles/
+          cp $Qt6_DIR/plugins/platformthemes/* AppDir/usr/plugins/platformthemes/
+          cp $Qt6_DIR/plugins/styles/* AppDir/usr/plugins/styles/
           # Package libssl.so and libcrypto.so
-          Qt_Tools=$Qt6_Dir/../../Tools
+          Qt_Tools=$Qt6_DIR/../../Tools
           linuxdeploy-x86_64.AppImage --appdir ./AppDir --plugin qt --output appimage -l $Qt_Tools/OpenSSL/binary/lib/libcrypto.so.* -l $Qt_Tools/OpenSSL/binary/lib/
           # tree AppDir
         working-directory: ${{runner.workspace}}/build
