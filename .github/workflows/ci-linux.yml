@@ -103,7 +103,7 @@ jobs:
           cp $Qt6_DIR/plugins/platformthemes/* AppDir/usr/plugins/platformthemes/
           cp $Qt6_DIR/plugins/styles/* AppDir/usr/plugins/styles/
           # Package libssl.so and libcrypto.so
-          linuxdeploy-x86_64.AppImage --appdir ./AppDir --plugin qt --output appimage -l /usr/lib/libcrypto.so.* -l /usr/lib/libssl.so.*
+          linuxdeploy-x86_64.AppImage --appdir ./AppDir --plugin qt --output appimage -l /usr/lib/x86_64-linux-gnu/libcrypto.so.* -l /usr/lib/x86_64-linux-gnu/libssl.so.*
           # tree AppDir
         working-directory: ${{runner.workspace}}/build
 
