@@ -53,7 +53,7 @@ jobs:
           version: 6.5.2
           target: desktop
           modules: 'qtwebengine qtwebchannel qtpositioning qtpdf qtimageformats qt5compat'
-          tools: tools_openssl_x64,qt.tools.openssl.gcc_64
+          tools: qt.tools.openssl.gcc_64
           cache: 'true'
 
       - name: Create Build Dir
