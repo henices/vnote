@@ -90,7 +90,7 @@ jobs:
           # Move the lib out to avoid duplication
           mv AppDir/usr/lib ./
           LD_LIBRARY_PATH=$PWD/lib:$LD_LIBRARY_PATH
-          Qt6_Dir=$QT_HOST_BINS/..
+          #Qt6_Dir=$QT_HOST_BINS/..
           #tree $Qt6_Dir
           #tree $Qt6_Dir/../..
           # Copy translations
