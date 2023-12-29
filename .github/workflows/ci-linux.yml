@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo DEBIAN_FRONTEND=noninteractive apt-get update
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree openssl-dev
 
       - name: Cache Qt
         id: cache-qt
@@ -53,7 +53,6 @@ jobs:
           version: 6.5.2
           target: desktop
           modules: 'qtwebengine qtwebchannel qtpositioning qtpdf qtimageformats qt5compat'
-          tools: qt.tools.openssl.gcc_64
           cache: 'true'
 
       - name: Create Build Dir
@@ -104,8 +103,7 @@ jobs:
           cp $Qt6_DIR/plugins/platformthemes/* AppDir/usr/plugins/platformthemes/
           cp $Qt6_DIR/plugins/styles/* AppDir/usr/plugins/styles/
           # Package libssl.so and libcrypto.so
-          Qt_Tools=$Qt6_DIR/../../Tools
-          linuxdeploy-x86_64.AppImage --appdir ./AppDir --plugin qt --output appimage -l $Qt_Tools/OpenSSL/binary/lib/libcrypto.so.* -l $Qt_Tools/OpenSSL/binary/lib/libssl.so.*
+          linuxdeploy-x86_64.AppImage --appdir ./AppDir --plugin qt --output appimage -l /usr/lib/libcrypto.so.* -l /usr/lib/libssl.so.*
           # tree AppDir
         working-directory: ${{runner.workspace}}/build
 
