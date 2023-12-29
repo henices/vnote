@@ -67,13 +67,10 @@ jobs:
           make -j$(nproc) && sudo make install
         working-directory: ${{runner.workspace}}/build
 
-      - name: Compile Fcitx5 Qt6
+      - name: Install Fcitx5 Qt6
         run: |
-          git clone https://github.com/fcitx/fcitx5-qt
-          cd fcitx5-qt && mkdir build
-          cd build
-          cmake .. -DENABLE_QT4=OFF -DENABLE_QT5=OFF -DENABLE_QT6=ON
-          make -j$(nproc) && sudo make install
+          wget https://mirrors.sdu.edu.cn/ubuntu/pool/universe/f/fcitx5-qt/fcitx5-frontend-qt6_5.1.3-1_amd64.deb
+          sudo dpkg -i fcitx5-frontend-qt6_5.1.3-1_amd64.deb
         working-directory: ${{runner.workspace}}
 
       - name: Configure Project
