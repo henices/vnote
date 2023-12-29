@@ -15,7 +15,7 @@ env:
 jobs:
   build-linux:
     name: Build On Ubuntu
-    runs-on: ubuntu-23.04
+    runs-on: ubuntu-latest
     timeout-minutes: 120
 
     steps:
