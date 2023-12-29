@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo DEBIAN_FRONTEND=noninteractive apt-get update
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree libssl-dev
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree libssl-dev libxcb-cursor-dev
 
       - name: Cache Qt
         id: cache-qt
