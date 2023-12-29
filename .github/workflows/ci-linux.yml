@@ -15,7 +15,7 @@ env:
 jobs:
   build-linux:
     name: Build On Ubuntu
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     timeout-minutes: 120
 
     steps:
@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo DEBIAN_FRONTEND=noninteractive apt-get update
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree libssl-dev libxcb-cursor-dev extra-cmake-modules libxkbcommon-dev
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libfcitx5-qt-dev tree libssl-dev libxcb-cursor-dev fuse libfuse2
 
       - name: Cache Qt
         id: cache-qt
