@@ -95,7 +95,7 @@ jobs:
           #tree $Qt6_Dir/../..
           # Copy translations
           mkdir -p AppDir/usr/translations
-          cp /usr/share/qt6/translations/qt_zh_CN.qm AppDir/usr/translations
+          cp /usr/share/qt6/translations/*.qm AppDir/usr/translations
           # Package qt5ct (EXTRA_QT_PLUGINS seems not work)
           # EXTRA_QT_PLUGINS="platformthemes/libqt5ct.so;styles/libqt5ct-style.so"
           mkdir -p AppDir/usr/plugins/platformthemes
